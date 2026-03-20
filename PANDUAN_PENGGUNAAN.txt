@@ -53,4 +53,41 @@ harus melakukan proses pelatihannya ulang.
                        waktu penyelesaian 10-30 menit!
 
 -------------------------------------------------------------
-Semoga sukses untuk presentasi/penggunaan sistem Anda!
+5. TUTORIAL TRAINING KHUSUS GOOGLE COLAB + GOOGLE DRIVE
+-------------------------------------------------------------
+Karena dataset sebesar 17.000 foto (60 GB) tidak mungkin 
+ditangani CPU biasa, ini adalah cara paling profesional:
+
+TAHAP PERSIAPAN:
+1. Pindahkan file 'data.zip' dan 'data.yaml' ke dalam folder
+   baru bernama 'Tugas_CV' di Google Drive utama Anda.
+   (Tunggu sampai upload 100% tuntas).
+
+TAHAP PENYELESAIAN DI GOOGLE COLAB:
+1. Buka Colab, atur Runtime -> "T4 GPU".
+2. Buat sel kode baru (satu-satu) dan eksekusi (tekan tombol ▶):
+
+(Kotak 1: Menghubungkan Drive & Install Modul)
+from google.colab import drive
+drive.mount('/content/drive')
+!pip install ultralytics
+
+(Kotak 2: Menyedot Data ke Mesin SSD Colab + Ekstrak)
+!cp /content/drive/MyDrive/Tugas_CV/data.zip /content/
+!cp /content/drive/MyDrive/Tugas_CV/data.yaml /content/
+!unzip -q /content/data.zip -d /content/
+
+(Kotak 3: TRAINING UTAMA! Tunggu 15-30 Menit)
+from ultralytics import YOLO
+model = YOLO('yolov8n.pt')
+results = model.train(data='/content/data.yaml', epochs=50, imgsz=640, batch=16, name='model_jenius')
+
+(Kotak 4: KEMBALIKAN HASILNYA KE GOOGLE DRIVE ANDA)
+!cp -r /content/runs /content/drive/MyDrive/Tugas_CV/
+
+Selesai! Buka Google Drive Anda, download file berharga
+`best.pt` dari dalam foldernya, dan nikmati sisa hari Anda.
+
+=============================================================
+Semoga sukses untuk presentasi dan pelamaran kerja Anda!
+=============================================================
