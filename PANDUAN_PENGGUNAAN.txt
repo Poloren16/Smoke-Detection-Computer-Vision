@@ -73,8 +73,8 @@ drive.mount('/content/drive')
 !pip install ultralytics
 
 (Kotak 2: Menyedot Data ke Mesin SSD Colab + Ekstrak)
-!cp /content/drive/MyDrive/Tugas_CV/data.zip /content/
-!cp /content/drive/MyDrive/Tugas_CV/data.yaml /content/
+!cp "/content/drive/MyDrive/COmputer Vision/Deteksi Asap/data.zip" /content/
+!cp "/content/drive/MyDrive/COmputer Vision/Deteksi Asap/data.yaml" /content/
 !unzip -q /content/data.zip -d /content/
 
 (Kotak 3: TRAINING UTAMA! Tunggu 15-30 Menit)
@@ -83,7 +83,7 @@ model = YOLO('yolov8n.pt')
 results = model.train(data='/content/data.yaml', epochs=50, imgsz=640, batch=16, name='model_jenius')
 
 (Kotak 4: KEMBALIKAN HASILNYA KE GOOGLE DRIVE ANDA)
-!cp -r /content/runs /content/drive/MyDrive/Tugas_CV/
+!cp -r /content/runs "/content/drive/MyDrive/COmputer Vision/Deteksi Asap/"
 
 Selesai! Buka Google Drive Anda, download file berharga
 `best.pt` dari dalam foldernya, dan nikmati sisa hari Anda.
