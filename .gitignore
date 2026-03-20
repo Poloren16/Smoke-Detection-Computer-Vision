@@ -1,0 +1,17 @@
+# Folders
+data/
+runs/
+__pycache__/
+.venv/
+.env/
+
+# Files
+data.zip
+hasil_rekaman_cv.mp4
+*.pt
+*.onnx
+*.engine
+
+# IDEs
+.vscode/
+.idea/

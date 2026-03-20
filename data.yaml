@@ -1,0 +1,9 @@
+path:  ./data
+train: train/images
+val:   val/images
+test:  test/images
+
+# Classes
+names:
+  0: Asap
+  1: Api
