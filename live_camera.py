@@ -48,7 +48,7 @@ def main():
 
         # 4. Deteksi objek pada frame (gambar) saat ini
         # conf=0.5 artinya kita hanya percaya deteksi di atas 50% yakin
-        results = model.predict(source=frame, conf=0.60, verbose=False)
+        results = model.predict(source=frame, conf=0.35, verbose=False)
 
         # 5. Gambarkan kotak hasil prediksi ke atas frame
         # r.plot() akan mengembalikan array gabungan gambar + kotak deteksi

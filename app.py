@@ -54,7 +54,7 @@ if image is not None:
             img_array = np.array(image)
             
             # Melakukan prediksi
-            results = model.predict(source=img_array, conf=0.60)
+            results = model.predict(source=img_array, conf=0.35)
             
             # Menampilkan hasil deteksi
             for r in results:
