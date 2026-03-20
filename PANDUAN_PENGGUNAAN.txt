@@ -1,0 +1,56 @@
+=============================================================
+PANDUAN PENGGUNAAN - SISTEM DETEKSI ASAP & API (YOLOv8)
+=============================================================
+
+Sistem ini adalah program Computer Vision (Kecerdasan Buatan) 
+yang dirancang untuk mendeteksi Asap dan Api.
+
+-------------------------------------------------------------
+1. TAHAP PERSIAPAN (Install Modul)
+-------------------------------------------------------------
+Sebelum menjalankan apa pun, pastikan Anda telah menginstal 
+seluruh modul yang dibutuhkan komputer Anda.
+Buka Terminal/PowerShell Anda (pastikan berada di folder ini),
+kemudian ketik:
+
+python -m pip install -r requirements.txt
+
+-------------------------------------------------------------
+2. CARA MENGGUNAKAN PENDETEKSI KAMERA LANGSUNG (LIVE CAMERA)
+-------------------------------------------------------------
+Aplikasi ini akan membuka Webcam Anda, mencari Asap & Api
+secara real-time (langsung), dan OTOMATIS MEREKAM video ke
+dalam file bernama 'hasil_rekaman_cv.mp4'.
+
+- Ketik di Terminal:   python live_camera.py
+- Tips:                Tekan tombol 'q' di keyboard Anda untuk
+                       mematikan kamera dan menyimpan rekaman.
+
+-------------------------------------------------------------
+3. CARA MENGGUNAKAN APLIKASI WEB (STREAMLIT UI)
+-------------------------------------------------------------
+Aplikasi ini menghadirkan antarmuka website (Graphical User 
+Interface) yang rapi, sehingga Anda bisa mengunggah gambar 
+dari file laptop Anda atau mengambil foto.
+
+- Ketik di Terminal:   python -m streamlit run app.py
+- Tips:                Website akan terbuka otomatis di Browser 
+                       Anda (atau klik link Local URL localhost).
+
+-------------------------------------------------------------
+4. CARA MELATIH ULANG KECERDASAN BUATAN (TRAINING AI)
+-------------------------------------------------------------
+Jika Anda ingin AI ini menjadi lebih pintar (seperti mendeteksi 
+objek dari sisi yang belum pernah AI lihat sebelumnya), Anda 
+harus melakukan proses pelatihannya ulang.
+
+- Ketik di Terminal:   python train.py
+- Penting:             Proses ini disarankan dijalankan di PC/Laptop 
+                       yg memiliki GPU (VGA Nvidia) kuat. 
+                       Jika menggunakan CPU biasa (laptop standar), 
+                       akan memakan waktu berjam-jam (3-5 jam).
+- Solusi Cepat:        Gunakan layanan cloud "Google Colab" untuk
+                       waktu penyelesaian 10-30 menit!
+
+-------------------------------------------------------------
+Semoga sukses untuk presentasi/penggunaan sistem Anda!
